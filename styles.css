@@ -1,3 +1,5 @@
-h1 {
-    color: rgb(255, 0, 0);
-}
+body h1 + p + p li.special{
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+  }
