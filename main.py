@@ -14,9 +14,11 @@ def index():
 @app.route('/image-process', methods=['GET', 'POST'])
 def image_process():
     file = request.files['img']
-    path = os.path.join(app.config['UPLOAD_FOLDER'], 'saved'+file.filename)
-    file.save(path)
-    return 'ok'
+    path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+    file.save(path)    
+    
+    data = {'name': file.filename,'url': save_img(path = path)}
+    return render_template("image-process.html", data=data)
 
 if __name__ == "__main__":
     app.run()
