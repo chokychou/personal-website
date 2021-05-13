@@ -15,3 +15,4 @@ def save_img(img, path = None):
 if __name__ == "__main__":
     im1 = Image.open("example.png") 
     im1 = im1.save("temp.png")
+
