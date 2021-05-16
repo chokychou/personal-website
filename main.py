@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,send_file
 from utils.image_tools import save_img
 
 UPLOAD_FOLDER = 'static/images'
@@ -18,7 +18,8 @@ def image_process():
     file.save(path)    
     
     data = {'name': file.filename,'url': save_img(path = path)}
-    return render_template("image-process.html", data=data)
+    #return render_template("image-process.html", data=data)
+    return send_file(file, mimetype='image/gif')
 
 if __name__ == "__main__":
     app.run()
