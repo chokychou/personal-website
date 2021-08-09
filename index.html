@@ -1,141 +1,56 @@
-<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
 
-<doctype html>
+<link rel="stylesheet" href="./css/styles.css">
+
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Portfolio</title>
+</head>
 <body>
+    <div id="fullpage" class="disable-select">
 
-    <h1>YI ZHOU</h1>
+        <div class="section s1">
 
-    <p class="info"> +1(401)-999-4576 | yzhou20@g.ucla.edu | 
-    1561 S Barrington Ave, Los Angeles, CA
-    </p>
-    <div>
-        <h2>education</h2>
+            <h1>The first section</h1>
 
-        <p> 
-        <span class="univ">UNIVERSITY OF CALIFORNIA LOS ANGELES (UCLA),</span> 
-        Los Angeles, CA <span class = "time">Expected June 2022</span>
-        </p>
-        <p class="degree">Master of science</p>
-        <p>
-        <ul>
-        <li>Major: Electrical and Computer Engineering.</li>
-        <li>GPA 3.70.</li>
-        <li>Relevant course work: Computational Imaging, Computer Vision, Neural Networks and Deep Learning.</li>
-        </ul>
-        </p>
+            <div class="slide">
+                <h1>Slides 1</h1>
+            </div>
 
-        <p> 
-        <span class="univ">SYRACUSE UNIVERSITY,</span> 
-        Syracuse, NY <span class = "time">May 2020</span>
-        </p>
-        <p class="degree">Bachelor of science</p>
-        <p>
-        <ul>
-        <li>Major: Electrical and Computer Engineering.</li>
-        <li>Minor: Statistics.</li>
-        <li>GPA 3.70.</li>
-        <li>Relevant course work: Communication Systems, Image Processing.</li>
-        </ul>
-        </p>
+            <div class="slide">
+                <h1>Slides 2</h1>
+            </div>
+
+        </div>
+        
+        <div class="section s1">
+            <h1>The 2 section</h1>
+        </div>
+        
+        <div class="section s1">
+            <h1>The 3 section</h1>
+        </div>
+
+        <div class="section s1">
+            <h1>The 3 section</h1>
+        </div>
     </div>
 
-    <div>
-        <h2>skills</h2>
-        <p>
-        <ul>
-        <li>Proficient in Python.</li> 
-        <li>Knowledge of HTML, CSS, JavaScript</li> 
-        <li>Knowledge of Computer Science subjects such as Networking(TCP), Database(SQL).</li> 
-        <li>Experience with Django REST.</li> 
-        <li>Other skills: Image Processing, Deep Learning, Computer Vision.</li> 
-        </ul>
-        </p>
-    </div>
-
-    <div>
-    <h2>projects</h2>
-    <p>
-        <span2 >phone shop</span2> (SQLITE) <span class = "time">March 2021</span> 
-        <p class="in">
-            <ul>
-                <li>Project description: Create a phone shop, 
-                    display current phone models, learn to implement SQL commands.</li>
-            </ul>
-            <ul>
-                <li>Project goals: 
-                    <ul>
-                        <li>Perform create, read, update, and delete operations, remove duplicated items from the database.</li>
-                        <li>Add indexing to speed up query speed.</li>
-                    </ul>
-
-                </li>
-            </ul>
-        </p>
-    </p>
-    <p>
-        <span2>osu! script devloper</span2> (PYTHON + OSU! API V2 + REQUESTS/REQUESTS-HTML) <span class = "time">March 2021</span>
-        <p class="in">
-            <ul>
-                <li>Project description: Use requests to exchange data through osu! API.</li>
-            </ul>
-            <ul>
-                <li>Project goals: 
-                    <ul>
-                        <li>Based on http protocols, develop scripts, and authenticate user token.</li>
-                        <li>Using http modules, make a script that detect website changes.</li>
-                        <li>Attempt to avoid same-origin policy through Ajax. </li>
-                    </ul>
-
-                </li>
-            </ul>
-        </p>
-    </p>
-    <p>
-        <span2>MOVIE THEATER SEATING CHALLENGE</span2> (PYTHON + NUMPY + UNITTEST) <span class = "time">January 2021</span>
-        <p class="in">
-            <ul>
-                <li>Project description: Design a system that assigns seats to customers, satisfies COVID guidelines and maximizes customer satisfaction.</li>
-            </ul>
-            <ul>
-                <li>Project goals: 
-                    <ul>
-                        <li>Design a score system to measure customer satisfaction, use FCFS algorithm to model the system.</li>
-                        <li>Use unittest debug codes, make sure the system handles edge cases.</li>
-                    </ul>
-
-                </li>
-            </ul>
-        </p>
-    </p>
-    <p>
-        <span2>OTHER PROJECTS </span2> (PYTORCH, TENSORFLOW, OPENCV, MATPOWER)
-        <p class="in">
-        <ul>
-            <li>Shopper Behavior Analysis: Analyze ads to predict if a viewer could be a future buyer. <span class = "time">April 2021</span>
-            </li>
-            <li>EEG Signal Classification: Design DNN architecture (CNN+LSTM), successfully classified signals with 70% accuracy. <span class = "time">March 2021</span>
-            </li>
-            <li>Heartbeat Detector：Design rPPG pipeline, estimate user heart rate using facial features.  <span class = "time">December 2020</span>
-            </li>
-            <li>Cyber-attack：Design model to diagnose weak nodes in the power system, measure losses. 	<span class = "time">December 2019</span>
-            </li>
-            <li>Network Stability：Generate model utilizing RE data from NREL, log uncertainties.  <span class = "time">May 2018</span>
-
-        </ul>
-    </p>
-    </p>
-    </div>
-
-    <div>
-        <h2>publications</h2>
-        <p>
-            W. P. Philippe, A. Bangura, Y. Zhou, and S. Eftekharnejad, 
-            Supplementing Spinning Reserves with Demand Response under 
-            Wind Generation Uncertainty, IEEE ISGT, 2020.
-        </p>
-    </div>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+        new fullpage('#fullpage', {
+            anchors:['about', 'education', 'project','contact'],
+            autoScrolling: true,
+            navigation: true,
+            navigationTooltips: ['About','Education','Project','Contact'],
+            showActiveTooltip: true,
+            controlArrows: false,
+            slidesNavigation: true,
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+body {
+  background-color: #E6E6FA;
+}
+
+h1 {
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+ -webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+}
