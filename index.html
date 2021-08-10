@@ -1,56 +1,162 @@
 <!DOCTYPE html>
+<html class="no-js" lang="en">
 
-<link rel="stylesheet" href="./css/styles.css">
-
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>E Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="fullpage" class="disable-select">
+    <div class="fullpage">
 
-        <div class="section s1">
-
-            <h1>The first section</h1>
-
-            <div class="slide">
-                <h1>Slides 1</h1>
+        <div id="lead">
+            <div id="lead-content">
+                <h1>Yi Zhou</h1>
+                <h2>Software Engineer</h2>
+                <a href="./assets/resume.pdf" class="btn-rounded-white">Download Resume</a>
             </div>
+            <!-- End #lead-content -->
 
-            <div class="slide">
-                <h1>Slides 2</h1>
+            <div id="lead-overlay"></div>
+
+            <div id="lead-down">
+                <span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </span>
             </div>
+            <!-- End #lead-down -->
+        </div>
+        <!-- End #lead -->
 
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">About Me</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            Currently a graduate student studing in EECS. Knowledgable disciplines range in power system, communciation system, computer vision, machine learning, and web dev.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="section s1">
-            <h1>The 2 section</h1>
-        </div>
-        
-        <div class="section s1">
-            <h1>The 3 section</h1>
-        </div>
+        <!-- End #about -->
 
-        <div class="section s1">
-            <h1>The 3 section</h1>
+        <div id="experience" class="background-alt">
+            <h2 class="heading">Experience</h2>
+            <div id="experience-timeline">
+                <div data-date="May 2021 – Present">
+                    <h3>MORUST INC</h3>
+                    <h4>Full Stack Engineer</h4>
+                    <p>
+                        At Morust I work on web design and site deployment for a <a class="normal" href="http://159.89.112.251/">community server</a> on Rust. The work includes building a clean UI/UX design, a payment system that update customer's in-game status after transaction, and a database that records every single transaction. 
+                    </p>
+                </div>
+            </div>
         </div>
+        <!-- End #experience -->
+
+        <div id="education">
+            <h2 class="heading">Education</h2>
+            <div class="education-block">
+                <h3>University of California, Los Angeles</h3>
+                <span class="education-date">Oct 2020 - Expected June 2022</span>
+                <h4>Master of Science in Computer Science</h4>
+                <ul>
+                    <li>Major: Electrical and Computer Engineering.</li>
+                    <li>GPA 3.76.</li>
+                    <li>Course work: Computational Imaging, Image Processing, Deep Learning, Reinforcement Learning.</li>
+                </ul>
+            </div>
+            <!-- End .education-block -->
+
+            <div class="education-block">
+                <h3>Syracuse University</h3>
+                <span class="education-date">Sept 2016 - May 2020</span>
+                <h4>Bachelor of Science in Electrical Engineering</h4>
+                <ul>
+                    <li>Major: Electrical and Computer Engineering.</li>
+                    <li>GPA 3.70.</li>
+                    <li>Course work: Power systems, Communication systems</li>
+                </ul>
+            </div>
+            <!-- End .education-block -->
+        </div>
+        <!-- End #education -->
+
+        <div id="skills">
+            <h2 class="heading">Skills</h2>
+            <ul>
+                <li>Matlab</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Django</li>
+                <li>Java</li>
+                <li>C</li>
+            </ul>
+        </div>
+        <!-- End #skills -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 copyright">
+                        <p>
+                            Copyright &copy; 2021 Yi Zhou
+                        </p>
+                    </div>
+                    <div class="col-sm-2 top">
+                        <span id="to-top">
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    
+
+                    <div class="col-sm-5 social">
+                        <ul>
+                            <li><a href="https://github.com/chokyzhou" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/yi-zhou-0614b9128/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><i class="fa fa-weixin" aria-hidden="true" onclick="copyToClipboard('choky_zhou')"></i></li>
+                        </ul>
+                        <span id="custom-tooltip">copied!</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer -->
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <script>
-        new fullpage('#fullpage', {
-            anchors:['about', 'education', 'project','contact'],
-            autoScrolling: true,
-            navigation: true,
-            navigationTooltips: ['About','Education','Project','Contact'],
-            showActiveTooltip: true,
-            controlArrows: false,
-            slidesNavigation: true,
-        })
-    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/scripts.min.js"></script>
 </body>
+        <script>
+            function copyToClipboard(str) {
+                // copyt to clipboard
+                const el = document.createElement('textarea');
+                el.value = str;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+
+                // show copy success message
+                document.getElementById("custom-tooltip").style.display = "inline-block";
+                setTimeout( function() {
+                    document.getElementById("custom-tooltip").style.display = "none";
+                }, 1000);
+            };
+           
+        </script>
 </html>
