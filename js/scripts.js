@@ -1,13 +1,30 @@
+/**
+    Title: functions
+    Author: Yi Zhou
+ */
+
+function copyToClipboard(str) {
+    // copyt to clipboard
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    // show copy success message
+    document.getElementById("custom-tooltip").style.display = "inline-block";
+    setTimeout( function() {
+        document.getElementById("custom-tooltip").style.display = "none";
+    }, 1000);
+};
+
+
 /*!
     Title: Dev Portfolio Template
     Version: 1.2.2
     Last Change: 03/25/2020
     Author: Ryan Fitzgerald
-    Repo: https://github.com/RyanFitzgerald/devportfolio-template
-    Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
-
-    Description: This file contains all the scripts associated with the single-page
-    portfolio website.
 */
 
 (function($) {
