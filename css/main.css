@@ -1,8 +1,22 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+section {
+    scroll-snap-align: start;
+}
+
+#lead{
+    height: 100vh;
+}
+
+.fullpage{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
 .normal {
     color: inherit;
 }
 
+/* display copy success message*/
 .visuallyhidden{position:absolute;clip:rect(1px,1px,1px,1px)}
 .copybutton{background-color:#fff;border:0;outline:0;cursor:pointer;opacity:1;position:absolute;width:40px;height:40px;z-index:9;border-radius:24px}
 .button-tooltip-container {
@@ -10,7 +24,6 @@
     align-items: center;
     margin-top: 16px;
     min-height: 30px;
-
 }
 #custom-tooltip {
     display: none;
