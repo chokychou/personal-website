@@ -2,8 +2,39 @@ section {
     scroll-snap-align: start;
 }
 
+.navbutton-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.navbutton-container .navbutton-grid{
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-gap: 0.8rem;
+}
+
+.navbutton-container .navbutton{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 3px solid lightcyan;
+    border-radius: 100%;
+    cursor: pointer;
+    pointer-events: all;
+}
+
 .fullpage{
+    /*
     scroll-snap-type: y mandatory;
+    */
     scroll-behavior: smooth;
     overflow-y: scroll;
     height: 100vh;

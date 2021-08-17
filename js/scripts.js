@@ -2,7 +2,23 @@
     Title: functions
     Author: Yi Zhou
  */
+const content = ['lead','about'];
 
+// scroll to snap next section
+const section_snap = document.querySelector('section');
+section_snap.onwheel = scroll_snap;
+
+function scroll_snap(event) {
+    var id_name = event.target.id.split('-')[0]; 
+    
+    // assuming just scrolling down
+    id_index = content.indexOf(id_name);
+    scrollTo = content[id_index + 1];
+    console.log(scrollTo);
+}
+
+
+// click to show copy success message
 function copyToClipboard(str) {
     // copyt to clipboard
     const el = document.createElement('textarea');
