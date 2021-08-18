@@ -2,51 +2,66 @@ section {
     scroll-snap-align: start;
 }
 
-.navbutton-container {
+.section_navigation {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    pointer-events: none;
-}
-
-.navbutton-container .navbutton-grid{
-    position: absolute;
-    right: 3rem;
+    background-color: rgba(255,255,255,0.85);
+    right: 40px;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%);
-    display: grid;
-    grid-gap: 0.8rem;
+    padding: 20px 0;
+    border-radius: 35px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.07), 0 7px 14px rgba(0,0,0,0.14);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07), 0 7px 14px rgba(0,0,0,0.14);
+    z-index: 999;
 }
 
-.navName {
-    display: inline-block;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    font-size: 1.2em;
-    padding-right: 25px;
-    color: rgba(6, 28, 42, 1);
-    mix-blend-mode: difference;
+.sec_button {
+    position: relative;
+    width: 40px;
+    height: 36px;
+    cursor: pointer;
 }
-
-.navbutton-container .navbutton{
-    display: inline-block;
+.sec_button::after {
+    content: '';
+    position: absolute;
     width: 20px;
     height: 20px;
-    background-color: transparent;
-    border: 3px solid rgba(6, 28, 42, 0.8);
-    border-radius: 100%;
-    cursor: pointer;
-    pointer-events: all;
-    z-index: 999;
+    left: 10px;
+    top: 8px;
+    border: 3px solid #a7a7a7;
+    border-radius: 50%;
+    -webkit-transition: border 0.26s ease-in-out;
+    -o-transition: border 0.26s ease-in-out;
+    transition: border 0.26s ease-in-out;
 }
-
-.navbutton-container .navbutton:hover{
-    background-color:rgba(6, 28, 42, 0.8);
+.sec_button.active::after {
+    border-color: #404040;
+}
+.sec_button span {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    right: 40px;
+    top: 7px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+    padding: 4px 12px;
+    border-radius: 15px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.sec_button:hover span {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+    transform: translateX(-10px);
 }
 
 .fullpage{
