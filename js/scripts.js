@@ -2,6 +2,29 @@
     Title: functions
     Author: Yi Zhou
  */
+// add navbar event listener. can click and scroll to desired page
+window.addEventListener('load', function() {
+    const buttons = document.querySelectorAll('.sec_button');
+    const content = document.querySelector('section');
+
+    // add events to buttons
+    buttons[0].classList.add('active');
+    for ( let i=0; i<buttons.length; i++ ) {
+        buttons[i].addEventListener('click', function() {
+            document.querySelector('.sec_button.active').classList.remove('active');
+            this.classList.add('active');
+            scroll_content(i);
+        });
+    }
+    
+    // scroll to the desired div
+    function scroll_content( count ) {
+        var p = document.getElementsByClassName('nav-select')[count].id;
+        document.getElementById(p).scrollIntoView();
+        document.querySelector('.sec_button.active').classList.remove('active');
+        buttons[count].classList.add('active');
+    }
+});
 
 
 // click to show copy success message
