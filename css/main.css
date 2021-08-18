@@ -2,6 +2,18 @@ section {
     scroll-snap-align: start;
 }
 
+#nav-overlay{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(255, 255, 255, 0.8);
+    z-index:1
+}
+
 .navbutton-container {
     position: fixed;
     top: 0;
@@ -21,14 +33,29 @@ section {
     grid-gap: 0.8rem;
 }
 
+.navName {
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: .75em;
+    padding-right: 25px;
+}
+
 .navbutton-container .navbutton{
+    display: inline-block;
     width: 20px;
     height: 20px;
     background-color: transparent;
-    border: 3px solid lightcyan;
+    border: 3px solid rgb(255, 174, 0);
     border-radius: 100%;
     cursor: pointer;
     pointer-events: all;
+}
+
+.navbutton-container .navbutton:hover{
+    background-color:rgba(6, 28, 42, 0.8);
 }
 
 .fullpage{
