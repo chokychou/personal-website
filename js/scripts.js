@@ -24,6 +24,8 @@ window.addEventListener('load', function() {
         document.querySelector('.sec_button.active').classList.remove('active');
         buttons[count].classList.add('active');
     }
+
+
 });
 
 
