@@ -5,7 +5,26 @@
 // add navbar event listener. can click and scroll to desired page
 window.addEventListener('load', function() {
     const buttons = document.querySelectorAll('.sec_button');
-    const content = document.querySelector('section');
+    const contents = document.querySelectorAll('section');
+
+    // intersection observer
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: [0,1],
+    };
+    
+    //  update nav buttons
+    for (let i = 0; i < contents.length; i++) {
+        let observers = new IntersectionObserver(function(entries, observer){
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                        activate_button(i);
+                    }
+                });
+            }, options);
+        observers.observe(contents[i]);
+    }
 
     // add events to buttons
     buttons[0].classList.add('active');
@@ -16,16 +35,19 @@ window.addEventListener('load', function() {
             scroll_content(i);
         });
     }
-    
+
     // scroll to the desired div
     function scroll_content( count ) {
         var p = document.getElementsByClassName('nav-select')[count].id;
         document.getElementById(p).scrollIntoView();
+        activate_button(count);
+    }
+
+    function activate_button( count ){
         document.querySelector('.sec_button.active').classList.remove('active');
         buttons[count].classList.add('active');
     }
-
-
+    
 });
 
 
