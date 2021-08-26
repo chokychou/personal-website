@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
     for (let i = 0; i < contents.length; i++) {
         let observers = new IntersectionObserver(function(entries, observer){
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    if (entry.isIntersecting && entry.boundingClientRect.top <= 0) {
                         activate_button(i);
                     }
                 });

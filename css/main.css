@@ -2,6 +2,10 @@ section {
     scroll-snap-align: start;
 }
 
+.nav-select {
+    border: none !important;
+}
+
 .section_navigation {
     position: fixed;
     background-color: rgba(255,255,255,0.85);
