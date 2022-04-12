@@ -1,11 +1,15 @@
+:root {
+    --grid-vh: 20vh;
+}
+  
 body,
 html {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-size:16px;
     justify-content: center;
     margin: 0px; padding: 0px;
-    background-color: rgb(225, 91, 91);
+    background-color: rgba(12, 45, 72, .65);
 }
 
 footer {
@@ -22,6 +26,34 @@ p {
     margin: 0 0;
 }
 
+.hidden {
+    display: none;
+}
+
+.right-me-v {
+    text-align: right;
+    justify-content: right;
+}
+
+.center-me-v {
+    text-align: center;
+    justify-content: center;
+}
+
+.center-me-h {
+    height: 100%;
+    line-height: var(--grid-vh);
+}
+
+.intro > .intro-text {
+    text-align: center;
+    font-size: 3.5em;
+    height: 70%;
+    font-family:'Helvetica';
+    font-weight: 900;
+    color:#FFF;
+}
+
 .footer-layout {
     margin: 0 auto;
 }
@@ -29,7 +61,7 @@ p {
 
 #wrapper {
     width: 100%;
-    height: 55%;
+    height: 70%;
     position: absolute;
     top:0;
     bottom: 0;
@@ -54,15 +86,17 @@ p {
 }
 
 .main-layout > .spacing {
-    margin: 20px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .main-layout > .headshot {
     text-align: center;
     grid-area: headshot;
-    background-color: rgb(113, 113, 175);
     color: #fff;
     padding: 20px;
+    background-color: rgba(20, 93, 160,1);
 }
 
 .main-layout > .headshot:hover {
@@ -72,15 +106,33 @@ p {
 
 .main-layout > .intro {
     grid-area: intro;
+    min-height: var(--grid-vh);
     padding: 20px;
     font: 1.2em sans-serif;
-  }
-  
+    background-color: rgba(46, 139, 192,1);
+}
 
 .main-layout > .project {
     grid-area: project;
     padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+ 
+    "buffer drag"
 }
+.project > .buffer {
+    grid-area: buffer;
+    display: inline-block;
+}
+
+.project > .drag {
+    grid-area: drag;
+    background-color: rgba(177, 212, 224,1);
+    display: inline-block;
+    padding: 10px 0;
+}
+
 
 
 .btn-outline-light{color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light:hover{color:#000;background-color:#f8f9fa;border-color:#f8f9fa}
