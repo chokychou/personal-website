@@ -5,144 +5,69 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E Portfolio</title>
+    <title>E's Portfolio</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <!-- Get BootStrap-->
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+
+
 </head>
 
 <body>
-    <div class="section_navigation">
-
-        <div class="sec_button"><span>Home</span></div>
-        <div class="sec_button"><span>About</span></div>
-        <div class="sec_button"><span>Experience</span></div>
-        <div class="sec_button"><span>Education</span></div>
-        <div class="sec_button"><span>Skills</span></div>
-
-    </div>
-
-    <div class="fullpage">
-        <section id="lead" class="nav-select">
-            <div id="lead-content">
-                <h1>Yi Zhou</h1>
-                <h2>Software Engineer</h2>
-                <a href="./assets/resume.pdf" class="btn-rounded-white">Download Resume</a>
+    <div id="wrapper">
+        <div class="main-layout" >
+            <div class="headshot container spacing">
+                <div class="centerme">大头照</div>
             </div>
-            <!-- End #lead-content -->
-
-            <div id="lead-overlay"></div>
-
-            <!-- End #lead-down -->
-        </section>
-        <!-- End #lead -->
-
-        <section id="about" class="nav-select">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2 class="heading">About Me</h2>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            I am currently a graduate student studying in EECS (Electrical Engineering and Computer Science). My academic track is SS (Signals and Systems), which broadly involves both analog side and digital side. My SS knowledge spans in Power Systems, Communciation Systems, Computer Vision, Machine Learning and Robotics.
-                        </p>
-                        </br>
-                        <p>
-                            I started programming as a hobby. My first web development project was to help make an online payment system for a community gamming server. The project involves building a webapp, a backbone to support online payment, and an ML model to detect bad players on the gaming server. The project gave me so much fun that I decided to become a software engineer. 
-                        </p>
-                    </div>
-                </div>
+            
+            <div class="intro container spacing">
+                <p> I am currently a graduate student studying in EECS. My academic track is Signals and Systems, which broadly involves in Power Systems, Communciation Systems, Computer Vision, Machine Learning and Robotics.</p>
             </div>
-        </section>
-        <!-- End #about -->
-
-        <section id="experience" class="background-alt nav-select">
-            <h2 class="heading">Experience</h2>
-            <div id="experience-timeline">
-                <div data-date="May 2021 – Aug 2021">
-                    <h3>MORUST INC</h3>
-                    <h4>Full Stack Engineer</h4>
+            
+            <div class="project container spacing">Drag ME</div>
+        </div>
+        
+        <footer class="container">
+            <div class="footer-layout">
+                <div class="copyright" >
                     <p>
-                        At Morust I work on web design and site deployment for a <a class="normal" href="http://159.89.112.251/">community server</a> on Rust. The work includes building a clean UI/UX design, a payment system that update customer's in-game status after transaction, and a database that records every single transaction. 
+                        Copyright &copy; 2022 Yi Zhou
                     </p>
                 </div>
-            </div>
-        </section>
-        <!-- End #experience -->
 
-        <section id="education" class="nav-select">
-            <h2 class="heading">Education</h2>
-            <div class="education-block">
-                <h3>University of California, Los Angeles</h3>
-                <span class="education-date">Oct 2020 - Expected June 2022</span>
-                <h4>Master of Science in Computer Science</h4>
-                <ul>
-                    <li>Major: Electrical and Computer Engineering.</li>
-                    <li>GPA 3.76.</li>
-                    <li>Course work: Computational Imaging, Image Processing, Deep Learning, Reinforcement Learning.</li>
-                </ul>
-            </div>
-            <!-- End .education-block -->
-
-            <div class="education-block">
-                <h3>Syracuse University</h3>
-                <span class="education-date">Sept 2016 - May 2020</span>
-                <h4>Bachelor of Science in Electrical Engineering</h4>
-                <ul>
-                    <li>Major: Electrical and Computer Engineering.</li>
-                    <li>GPA 3.70.</li>
-                    <li>Course work: Power systems, Communication systems</li>
-                </ul>
-            </div>
-            <!-- End .education-block -->
-        </section>
-        <!-- End #education -->
-
-        <section id="skills" class="nav-select">
-            <h2 class="heading">Skills</h2>
-            <ul>
-                <li>Matlab</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Django</li>
-                <li>Java</li>
-                <li>C</li>
-                <li>PyTorch</li>
-                <li>TensorFlow</li>
-                <li>Simulink</li>
-            </ul>
-        </section>
-        <!-- End #skills -->
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5 copyright">
-                        <p>
-                            Copyright &copy; 2021 Yi Zhou
-                        </p>
-                    </div>
-
-                    <div class="col-sm-5 social">
-                        <ul>
-                            <li><a href="https://github.com/chokyzhou" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/yi-zhou-0614b9128/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><i class="fa fa-weixin" aria-hidden="true" onclick="copyToClipboard('choky_zhou')"></i></li>
-                        </ul>
-                        <span id="custom-tooltip">copied!</span>
-                    </div>
+                <div class="contact">
+                    <!-- Google -->
+                    <!--a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fab fa-google"></i>
+                    </a -->
+                    
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/yi-zhou-0614b9128/" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/chokyzhou" role="button">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <!-- WeChat -->
+                    <a class="btn btn-outline-light btn-floating m-" role="button">
+                        <i class="fab fa-weixin" aria-hidden="true" onclick="copyToClipboard('choky_zhou')"></i>
+                    </a>
+                    <span id="custom-tooltip">copied!</span>
                 </div>
+                
             </div>
-        </footer>
+        </div>
         <!-- End footer -->
+        
     </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/scripts.js"></script>
 </body>
+<script src="js/scripts.js"></script>
 </html>
