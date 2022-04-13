@@ -16,9 +16,9 @@ footer {
     display: flex;
     width: 80%;
     justify-content: center;
-    margin: 20px auto;
+    margin: 5px auto;
     background-color: rgb(211, 134, 26);
-    padding: 10px 0px;
+    padding: 0px 0px;
 }
 
 p {
@@ -35,30 +35,46 @@ p {
     justify-content: right;
 }
 
-.center-me-v {
-    text-align: center;
-    justify-content: center;
+
+
+.rotated-text-mixed {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: inline-block;
 }
 
-.center-me-h {
-    height: 100%;
-    line-height: var(--grid-vh);
+.rotated-text-upright {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: inline-block;
 }
 
-.intro > .intro-text, .intro-text-small {
+.name-text, .name-text-small {
     text-align: center;
     font-size: 3.5em;
-    height: 70%;
+    height: 50%;
     font-family:'Helvetica';
     font-weight: 900;
     justify-content: center;
     color:#FFF;
+    padding: 0%;
+    margin: auto auto;
+}
+
+.intro-text, .intro-text-small {
+    padding: 10px;
+    font-size: 1.3em;
+    height: 50%;
+    font-family:'Helvetica';
+    font-weight: 500;
+    color:#FFF;
+    margin: auto auto;
+    height: auto;
 }
 
 .footer-layout {
     margin: 0 auto;
 }
-
 
 #wrapper {
     width: 100%;
@@ -80,39 +96,40 @@ p {
     margin: 20px auto;
     width: 80%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 200px auto;
+    grid-template-rows: auto 50px;
     grid-template-areas:
     "headshot intro"
     "headshot project";
 }
 
-.main-layout > .spacing {
-    margin: 20px;
-}
+
 
 .main-layout > .headshot {
     text-align: center;
     grid-area: headshot;
     color: #fff;
-    padding: 20px;
     background-color: rgba(20, 93, 160,1);
     min-height: var(--grid-vh);
+    font: 1.2em sans-serif;
+    margin: auto auto;
+    margin-left: 0;
 }
 
 
 .main-layout > .intro {
     grid-area: intro;
     min-height: var(--grid-vh);
-    padding: 20px;
     font: 1.2em sans-serif;
     background-color: rgba(46, 139, 192,1);
-    margin: auto 20px;
 }
 
 .main-layout > .project {
     grid-area: project;
-    padding: 20px;
     display: grid;
+    margin: 0 0;
+    padding: 0px 0px;
+    max-height: fit-content;
     grid-template-columns: 100fr 1fr;
     grid-template-areas:
     "buffer drag";
@@ -120,13 +137,15 @@ p {
 .project > .buffer {
     grid-area: buffer;
     display: inline-block;
+    margin: auto auto;
+    padding: 0px 0px;
 }
 
 .project > .drag {
     grid-area: drag;
     background-color: rgba(177, 212, 224,1);
     display: inline-block;
-    padding: 10px 0;
+    padding: auto;
 }
 
 
@@ -192,11 +211,11 @@ p {
         min-width: 250px;
     }
 
-    .intro > .intro-text {
+    .name-text {
         display: none;
     }
 
-    .intro > .intro-text-small {
+    .name-text-small {
         display: flex;
         font-size: 3em;
     }
