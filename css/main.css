@@ -30,10 +30,11 @@ p {
     margin: 0 0;
 }
 
-svg {
-    left: 50%;
-    margin-left: -200px;
+img {
+    margin-left: -100px;
+    margin-right: auto;
     position: absolute;
+    min-height: 20vh;
 }
 
 .hidden {
@@ -116,6 +117,9 @@ svg {
     grid-template-areas:
     "headshot intro"
     "headshot project";
+
+    color: #000;
+    background-color: (177, 212, 224,1);
 }
 
 .main-layout-small {
@@ -243,7 +247,7 @@ svg {
 
 
     .main-layout-small > .intro {
-        min-height: 60vh;
+        min-height: 55vh;
         min-width: 250px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -259,6 +263,11 @@ svg {
         min-width: 250px;
     }
 
+    img {
+        margin-top: 330px;
+        margin-left: -250px;
+        min-height: 30vh;
+    }
 }
 
 #wrapper > .more {
@@ -279,7 +288,15 @@ svg {
     transform: translateY(-50%);
 }
 
-.high {
-    transition: all 1s;
+.canvas-away {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.canvas-in {
+    opacity: 1;
     height: 50vh;
+    transition: all 1s ease;
 }

@@ -26,7 +26,6 @@ function window_check() {
             $('.headshot > p').removeClass("rotated-text-upright rotated-text-mixed");
             $('#main').removeClass("main-layout").addClass("main-layout-small");
             $('.intro-text').removeClass("intro-text-big");
-
         } else {
             $('.headshot > .name-cn').addClass("rotated-text-upright");
             $('.headshot > .name-en').addClass("rotated-text-mixed");
@@ -37,11 +36,18 @@ function window_check() {
 
     helper()
 }
-
 window_check();
 
-$('#main > .project').bind('click', () => {
+// more button
+$('.drag').bind('click', () => {
     $('#main').removeClass('main-layout').addClass('hidden');
-    $('#more').removeClass('hidden');
-    $('#more').addClass('high');
-})
+    $('#more').removeClass('canvas-away').addClass('canvas-in');
+    
+    setTimeout(() => {
+    }, 1000);
+});
+
+$('#more').bind('click', () => { 
+    $('#main').removeClass('hidden').addClass('main-layout');
+    $('#more').removeClass('canvas-in').addClass('canvas-away');
+} )
