@@ -22,13 +22,16 @@ function window_check() {
     }, true);
 
     function helper () {
-        if (window.innerWidth < 440) {
+        if (window.innerWidth <= 480) {
             $('.headshot > p').removeClass("rotated-text-upright rotated-text-mixed");
             $('#main').removeClass("main-layout").addClass("main-layout-small");
+            $('.intro-text').removeClass("intro-text-big");
+
         } else {
             $('.headshot > .name-cn').addClass("rotated-text-upright");
             $('.headshot > .name-en').addClass("rotated-text-mixed");
             $('#main').removeClass("main-layout-small").addClass("main-layout");
+            $('.intro-text').addClass("intro-text-big");
         }
     }
 

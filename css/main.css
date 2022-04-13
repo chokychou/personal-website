@@ -1,7 +1,7 @@
 :root {
     --grid-vh: 20vh;
 }
-  
+
 body,
 html {
     overflow-y: hidden;
@@ -11,11 +11,10 @@ html {
     justify-content: center;
     margin: 0px; padding: 0px;
     transition:all 1s;
-    background-image: url("../images/bg.svg");
     background: #15181a;
-
+    overflow: hidden;
+    position: relative;
 }
-
 
 footer {
     display: flex;
@@ -31,6 +30,12 @@ p {
     margin: 0 0;
 }
 
+svg {
+    left: 50%;
+    margin-left: -200px;
+    position: absolute;
+}
+
 .hidden {
     display: none;
 }
@@ -39,8 +44,6 @@ p {
     text-align: right;
     justify-content: right;
 }
-
-
 
 .rotated-text-mixed {
     writing-mode: vertical-rl;
@@ -76,9 +79,13 @@ p {
     margin: auto auto;
     height: auto;
 }
-.intro-text-addon {
-    transform: translateY(5%);
+
+.intro-text-big {
+    position: absolute;
+    bottom: 10%;
+    width: 95%;
 }
+
 
 .footer-layout {
     margin: 0 auto;
@@ -129,12 +136,22 @@ p {
     margin-left: 0;
 }
 
+.main-layout > .headshot:hover {
+    background-color: rgba(20, 93, 160,1);
+    transition: all .3s;
+}
 
 .main-layout > .intro {
     grid-area: intro;
     min-height: var(--grid-vh);
     font: 1.2em sans-serif;
     background-color: rgba(46, 139, 192,.3);
+    position: relative;
+}
+
+.main-layout > .intro:hover {
+    background-color: rgba(46, 139, 192, 1);
+    transition: all .3s;
 }
 
 .main-layout > .project {
@@ -150,7 +167,7 @@ p {
 
 .project > .drag {
     grid-area: drag;
-    background-color: rgba(177, 212, 224,.3);
+    background-color: rgba(177, 212, 224,.0);
     display: inline-block;
     padding: auto;
     min-width: 150px;
@@ -162,6 +179,10 @@ p {
     line-height: 1.9;
 }
 
+.project > .drag:hover {
+    background-color: rgba(177, 212, 224,1);
+    transition: all .3s;
+}
 
 
 .btn-outline-light{color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light:hover{color:#000;background-color:#f8f9fa;border-color:#f8f9fa}
@@ -200,10 +221,15 @@ p {
     color: #fff;
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 480px) {
     #wrapper{
         height: 0%;
         margin: 0 0;
+    }
+
+    .headshot > p {
+        font-size: 2.5em;
+        transition: all 1s;
     }
 
     .main-layout {
