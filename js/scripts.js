@@ -36,3 +36,9 @@ function window_check() {
 }
 
 window_check();
+
+$('#main > .project').bind('click', () => {
+    $('#main').removeClass('main-layout').addClass('hidden');
+    $('#more').removeClass('hidden');
+    $('#more').addClass('high');
+})

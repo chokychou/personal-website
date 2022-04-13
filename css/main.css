@@ -10,8 +10,12 @@ html {
     font-size:16px;
     justify-content: center;
     margin: 0px; padding: 0px;
-    background-color: rgba(12, 45, 72, .65);
+    transition:all 1s;
+    background-image: url("../images/bg.svg");
+    background: #15181a;
+
 }
+
 
 footer {
     display: flex;
@@ -72,6 +76,9 @@ p {
     margin: auto auto;
     height: auto;
 }
+.intro-text-addon {
+    transform: translateY(5%);
+}
 
 .footer-layout {
     margin: 0 auto;
@@ -115,7 +122,7 @@ p {
     text-align: center;
     grid-area: headshot;
     color: #fff;
-    background-color: rgba(20, 93, 160,1);
+    background-color: rgba(20, 93, 160,.3);
     min-height: var(--grid-vh);
     font: 1.2em sans-serif;
     margin: auto auto;
@@ -127,7 +134,7 @@ p {
     grid-area: intro;
     min-height: var(--grid-vh);
     font: 1.2em sans-serif;
-    background-color: rgba(46, 139, 192,1);
+    background-color: rgba(46, 139, 192,.3);
 }
 
 .main-layout > .project {
@@ -143,7 +150,7 @@ p {
 
 .project > .drag {
     grid-area: drag;
-    background-color: rgba(177, 212, 224,1);
+    background-color: rgba(177, 212, 224,.3);
     display: inline-block;
     padding: auto;
     min-width: 150px;
@@ -226,4 +233,27 @@ p {
         min-width: 250px;
     }
 
+}
+
+#wrapper > .more {
+    position: relative;
+    justify-content: center;
+    margin: 20px auto;
+    width: 80%;
+    background-color: rgba(177, 212, 224,1);
+  }
+  
+
+#wrapper > .more > .vertical-center {
+    background-color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.high {
+    transition: all 1s;
+    height: 50vh;
 }
