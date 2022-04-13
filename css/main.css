@@ -4,6 +4,7 @@
   
 body,
 html {
+    overflow-y: hidden;
     width: 100%;
     height: 100vh;
     font-size:16px;
@@ -96,14 +97,19 @@ p {
     margin: 20px auto;
     width: 80%;
     display: grid;
-    grid-template-columns: 200px auto;
-    grid-template-rows: auto 50px;
+    grid-template-columns: 206px auto;
+    grid-template-rows: auto 80px;
     grid-template-areas:
     "headshot intro"
     "headshot project";
 }
 
-
+.main-layout-small {
+    justify-content: center;
+    margin: 20px auto;
+    width: 80%;
+    color: #fff;
+}
 
 .main-layout > .headshot {
     text-align: center;
@@ -127,18 +133,12 @@ p {
 .main-layout > .project {
     grid-area: project;
     display: grid;
-    margin: 0 0;
+    margin: 7px 0;
     padding: 0px 0px;
     max-height: fit-content;
     grid-template-columns: 100fr 1fr;
     grid-template-areas:
     "buffer drag";
-}
-.project > .buffer {
-    grid-area: buffer;
-    display: inline-block;
-    margin: auto auto;
-    padding: 0px 0px;
 }
 
 .project > .drag {
@@ -146,6 +146,13 @@ p {
     background-color: rgba(177, 212, 224,1);
     display: inline-block;
     padding: auto;
+    min-width: 150px;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(168, 61, 61);
+    font-family:'Helvetica';
+    font-weight: 600;
+    line-height: 1.9;
 }
 
 
@@ -186,7 +193,7 @@ p {
     color: #fff;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 440px) {
     #wrapper{
         height: 0%;
         margin: 0 0;
@@ -196,31 +203,20 @@ p {
         margin-bottom: 0;
         width: 85%;
         grid-template-areas:
-            "intro intro"
             "headshot headshot"
+            "intro intro"
             "project project";
     }
 
-    .main-layout > .headshot {
-        min-height: 45vh;
+
+    .main-layout-small > .intro {
+        min-height: 60vh;
         min-width: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
-    .main-layout > .intro {
-        min-height: 20vh;
-        min-width: 250px;
-    }
-
-    .name-text {
-        display: none;
-    }
-
-    .name-text-small {
-        display: flex;
-        font-size: 3em;
-    }
-    
-    .main-layout > .project {
+    .project {
         display: none;
         min-width: 250px;
     }
