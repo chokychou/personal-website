@@ -37,6 +37,10 @@ img {
     min-height: 20vh;
 }
 
+iframe {
+    border-style: none;
+}
+
 .hidden {
     display: none;
 }
@@ -247,7 +251,7 @@ img {
 
 
     .main-layout-small > .intro {
-        min-height: 55vh;
+        min-height: 45vh;
         min-width: 250px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -264,9 +268,32 @@ img {
     }
 
     img {
-        margin-top: 330px;
+        margin-top: 300px;
         margin-left: -250px;
         min-height: 30vh;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    #wrapper{
+        height: 0%;
+        margin: 0 0;
+    }
+
+    .headshot > p {
+        font-size: 2.5em;
+        transition: all 1s;
+    }
+
+    .main-layout-small > .intro {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: fit-content;
+    }
+
+    .project {
+        display: none;
+        min-width: 250px;
     }
 }
 
@@ -281,11 +308,13 @@ img {
 
 #wrapper > .more > .vertical-center {
     background-color: #fff;
-    margin: 0;
+    margin-left: 5%;
     position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 5%;
+    -ms-transform: translateY(-5%);
+    transform: translateY(-5%);
+    width: 90%;
+    height: 90%;
 }
 
 .canvas-away {
