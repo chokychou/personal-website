@@ -42,9 +42,6 @@ window_check();
 $('.drag').bind('click', () => {
     $('#main').removeClass('main-layout').addClass('hidden');
     $('#more').removeClass('canvas-away').addClass('canvas-in');
-    
-    setTimeout(() => {
-    }, 1000);
 });
 
 $('#more').bind('click', () => { 
