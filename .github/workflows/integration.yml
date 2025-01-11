@@ -10,7 +10,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install npm dependencies
-        run: npm insall
       - name: Build with Next.js
-        run: npm run build
+        run: next build
