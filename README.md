@@ -1,1 +1,1 @@
-Simple low effort portfolio, but gets the job done.
+Redirect to github.com/chokychou/personal-website
