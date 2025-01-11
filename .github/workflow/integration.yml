@@ -7,9 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Install npm dependencies
-      run: npm insall
-    - name: Build with Next.js
-      run: npm run build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install npm dependencies
+        run: npm insall
+      - name: Build with Next.js
+        run: npm run build
