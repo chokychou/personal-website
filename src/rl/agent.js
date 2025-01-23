@@ -3,7 +3,6 @@ import QLearning, { get_state_from_pos, sleep } from "./train_eg";
 export class Agent {
 
     constructor() {
-        let timerId;
         let metadata = {
             x_pos: 0,
             y_pos: 0,
@@ -22,7 +21,7 @@ export class Agent {
         // For training
         // this.trainer()
         // For demo
-        timerId = setTimeout(this.autoPlay, 10000);
+        this.timerId = setTimeout(this.autoPlay, 10000);
     }
 
     _handleKeydown() {
