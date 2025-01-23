@@ -1,3 +1,5 @@
-Redirect to github.com/chokychou/personal-website
+## What is it
 
-Original game takes from https://github.com/keguigong/chrome-dino
+A simple repo shows as personal front page.
+
+self link https://github.com/chokychou/personal-website
