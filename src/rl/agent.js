@@ -21,7 +21,7 @@ export class Agent {
         // For training
         // this.trainer()
         // For demo
-        this.timerId = setTimeout(this.autoPlay, 10000);
+        this.timerId = setTimeout(this.autoPlay.bind(this), 10000);
     }
 
     _handleKeydown() {
@@ -35,23 +35,20 @@ export class Agent {
     }
 
     async autoPlay() {
-        this.metadata  = {
-            x_pos: 0,
-            y_pos: 0,
-            score: 0,
-            done: false,
-            current_action: 0,
-            q_size: 0
-        };
         let q_learning = new QLearning(this.metadata);
         const Q = require('./record.json')
         q_learning.step(1); // start the game
         while (!this.metadata.done) {
             let state = get_state_from_pos(this.metadata);
-            const action_set = [Q[state]["0"],Q[state]["1"],Q[state]["2"]]
+            let action_set;
+            try {
+                action_set = [Q[state]["0"],Q[state]["1"],Q[state]["2"]]
+            } catch {
+                action_set = [0,1,0]
+            }
             let action = action_set.indexOf(Math.max(...Object.values(action_set)));
             q_learning.step(action);
-            await sleep(100);
+            await sleep(30);
         }
     }
 

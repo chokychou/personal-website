@@ -1,5 +1,5 @@
 export function get_state_from_pos(metadata) {
-    let divisor = 10;
+    let divisor = 5;
     return `${Math.floor(metadata.x_pos/divisor)}_${Math.floor(metadata.y_pos/divisor)}`
 }
 
@@ -41,6 +41,7 @@ export default class QLearning {
     }
 
     step(action) {
+        console.log("smartass")
         if (action === 1) {
             document.dispatchEvent(new KeyboardEvent('keydown', {
                 key: 'Space',
@@ -51,8 +52,17 @@ export default class QLearning {
                 cancelable: true
             }));
         }
+        // TODO: fix the keydown simulation
         if (action === 2) {
             document.dispatchEvent(new KeyboardEvent('keydown', {
+                key: 'ArrowDown',
+                code: 'ArrowDown',
+                keyCode: 40,
+                which: 40,
+                bubbles: true,
+                cancelable: true
+            }));
+            document.dispatchEvent(new KeyboardEvent('keyup', {
                 key: 'ArrowDown',
                 code: 'ArrowDown',
                 keyCode: 40,
@@ -101,13 +111,13 @@ export default class QLearning {
                 this.metadata.action = action;
 
                 this.step(action);
-                await sleep(200);
+                await sleep(50);
 
                 let reward = 0;
                 let next_state = get_state_from_pos(this.metadata);
                 let score = this.metadata.score;
 
-                if (action !== 0) {
+                if (action === 1) {
                     reward += 1
                 }
 
