@@ -112,7 +112,7 @@ export default class PressToStart {
 
     let textDimension = PressToStart.TEXT_LIST[this.currTextIndex]
     this.drawText(textDimension)
-    this.drawEmoji("Code with 🤚 & ❤️ by keguigong", fadeOut)
+    this.drawEmoji("By chokychou and keguigong", fadeOut)
   }
 
   reset() {

@@ -6,12 +6,13 @@ import Horizon from "./Horizon"
 import Trex from "./Trex"
 import { checkForCollision } from "./collisionDetection"
 import { FPS, IS_HIDPI, IS_IOS, IS_MOBILE } from "./varibles"
+import { Agent } from "@/rl/agent"
 
 const DEFAULT_WIDTH = 600
 const RESOURCE_POSTFIX = "offline-resources-"
 const BDAY_SPRITE_POSTFIX = "offline-bday-sprite-"
 
-export default class Runner {
+export default class Runner extends Agent {
   canvas!: HTMLCanvasElement // Canvas object
   ctx!: CanvasRenderingContext2D // Canvas context
   spriteDef!: SpritePosDef // Sprite definition
@@ -57,10 +58,26 @@ export default class Runner {
   hp = HPBar.config.MAX_HP // HP value
 
   constructor(outerContainerId: string, optConfig?: ConfigDict) {
+    super()
     this.outerContainerEl = document.querySelector(outerContainerId)!
     this.config = optConfig || Object.assign(Runner.config, Runner.normalConfig)
 
     this.loadImages()
+  }
+
+  /**
+  * Prepare data and dump out for machine learning.
+  */
+  _store_observation() {
+    this.metadata.score = Math.floor(this.distanceRan);
+    try {
+      this.metadata.x_pos = Math.max(0, this.horizon.obstacles[0].xPos)
+      this.metadata.y_pos = Math.max(0, this.horizon.obstacles[0].yPos)
+    } catch {/** null during initalization because there is no obstacles. */
+      this.metadata.x_pos = 0
+      this.metadata.y_pos = 0
+    }
+    this.metadata.done = this.hp === 0;
   }
 
   /**
@@ -307,6 +324,7 @@ export default class Runner {
 
       this.scheduleNextUpdate()
     }
+    this._store_observation()
   }
 
   /**
@@ -453,7 +471,7 @@ export default class Runner {
         Math.max(
           0,
           (windowHeight - scaledCanvasHeight - Runner.config.ARCADE_MODE_INITIAL_TOP_POSITION) *
-            Runner.config.ARCADE_MODE_TOP_POSITION_PERCENT
+          Runner.config.ARCADE_MODE_TOP_POSITION_PERCENT
         )
       ) * window.devicePixelRatio
     this.containerEl.style.transform = "scale(" + scale + ") translateY(" + translateY + "px)"
@@ -571,7 +589,7 @@ export default class Runner {
     const keycode = e.keyCode
     const isJumpKey =
       Runner.keycodes.JUMP[keycode] || e.type === Runner.events.TOUCHEND || e.type === Runner.events.POINTERUP
-    if (this.isRunning() && isJumpKey) {
+      if (this.isRunning() && isJumpKey) {
       this.tRex.endJump()
     } else if (Runner.keycodes.DUCK[keycode]) {
       this.tRex.speedDrop = false
@@ -581,7 +599,7 @@ export default class Runner {
 
       if (
         deltaTime >= this.config.GAMEOVER_CLEAR_TIME &&
-        (Runner.keycodes.JUMP[keycode] || Runner.keycodes.RESTART[keycode] || e.type === Runner.events.POINTERUP)
+        (Runner.keycodes.JUMP[keycode] || Runner.keycodes.RESTART[keycode] || e.type === Runner.events.POINTERUP || e.type === Runner.events.TOUCHEND)
       ) {
         this.restart()
       }
